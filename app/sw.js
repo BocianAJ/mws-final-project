@@ -1,7 +1,14 @@
+
 'use strict';
 
-import idb from "idb";
-console.log(idb);
+import { openDB, deleteDB, wrap, unwrap } from 'idb';
+
+const dbPromise = openDB('keyval-store', 1, {
+  upgrade(db) {
+    db.createObjectStore('keyval');
+  }
+});
+ 
 
 
 const staticCacheName = 'restaurant-reviews-v1';
@@ -11,21 +18,21 @@ const urlsCached = [
   '.',
   'index.html',
   'restaurant.html',
-  'css/styles.css',
-  'js/dbhelper.js',
-  'js/main.js',
-  'js/restaurant_info.js',
-  'img/',
-  'img/1.jpg',
-  'img/2.jpg',
-  'img/3.jpg',
-  'img/4.jpg',
-  'img/5.jpg',
-  'img/6.jpg',
-  'img/7.jpg',
-  'img/8.jpg',
-  'img/9.jpg',
-  'img/10.jpg'
+  'styles/styles.css',
+  'scripts/dbhelper.js',
+  'scripts/main.js',
+  'scripts/restaurant_info.js',
+  /*'scripts/bundle.js',*/
+  'images/1.jpg',
+  'images/2.jpg',
+  'images/3.jpg',
+  'images/4.jpg',
+  'images/5.jpg',
+  'images/6.jpg',
+  'images/7.jpg',
+  'images/8.jpg',
+  'images/9.jpg',
+  'images/10.jpg'
 ];
 
 

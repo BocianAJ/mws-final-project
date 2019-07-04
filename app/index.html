@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <title>Restaurant Reviews</title>
 </head>
@@ -36,13 +36,19 @@
             <ul id="restaurants-list"></ul>
         </section>
     </main>
-    
-    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+
+    <script type="application/javascript" charset="utf-8" src="scripts/dbhelper.js"></script>
+    <script type="application/javascript" charset="utf-8" src="scripts/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwBDP3ucM3agu0g7Qx3caCmZzxnlZi6_g&libraries=places&callback=initMap"></script>
-    
+
     <!-- Adding script for registering a service worker -->
     <script type="application/javascript" charset="utf-8" src="register-sw.js"></script>
+
+    <!-- build:js scripts/main.js -->
+    +
+    <script src="scripts/bundle.js"></script>
+    <!-- endbuild -->
+
 
     <footer id="footer">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
