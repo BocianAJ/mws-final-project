@@ -1,82 +1,31 @@
 {
-    "private": true,
-    "engines": {
-        "node": ">=4"
+    "name": "mws-project-2",
+    "version": "1.0.0",
+    "description": "Udacity's MWS Final Project",
+    "private": "true",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server --open",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BocianAJ/mws-final-project.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BocianAJ/mws-final-project/issues"
+    },
+    "homepage": "https://github.com/BocianAJ/mws-final-project#readme",
+    "devDependencies": {
+        "webpack": "^4.35.2",
+        "webpack-cli": "^3.3.5",
+        "webpack-dev-server": "^3.7.2"
     },
     "dependencies": {
-        "bootstrap": "^4.1.3",
-        "gulp-inject": "^5.0.2",
-        "gulp-minify": "^3.1.0",
-        "gulp-replace": "^1.0.0",
-        "idb": "^4.0.3",
-        "jquery": "^3.3.1",
-        "modernizr": "^3.6.0",
-        "popper.js": "^1.14.6",
-        "run-sequence": "^2.2.1",
-        "wiredep": "^4.0.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.1.2",
-        "@babel/preset-env": "^7.1.0",
-        "autoprefixer": "^9.4.4",
-        "babelify": "^10.0.0",
-        "browser-sync": "^2.2.1",
-        "browserify": "^16.2.3",
-        "chai": "^4.2.0",
-        "cross-env": "^5.2.0",
-        "cssnano": "^4.1.7",
-        "del": "^3.0.0",
-        "gulp": "^4.0.0",
-        "gulp-babel": "^8.0.0",
-        "gulp-cli": "^2.0.1",
-        "gulp-eslint": "^5.0.0",
-        "gulp-filter": "^5.1.0",
-        "gulp-htmlmin": "^5.0.1",
-        "gulp-if": "^2.0.2",
-        "gulp-imagemin": "^5.0.3",
-        "gulp-load-plugins": "^1.2.4",
-        "gulp-plumber": "^1.0.1",
-        "gulp-postcss": "^8.0.0",
-        "gulp-sass": "^4.0.2",
-        "gulp-size": "^3.0.0",
-        "gulp-sourcemaps": "^2.2.0",
-        "gulp-uglify": "^3.0.1",
-        "gulp-useref": "^3.0.0",
-        "mkdirp": "^0.5.1",
-        "mocha": "^5.2.0",
-        "vinyl-buffer": "^1.0.1",
-        "vinyl-source-stream": "^2.0.0",
-        "yargs": "12.0.5"
-    },
-    "scripts": {
-        "serve:test": "cross-env NODE_ENV=test gulp serve",
-        "serve:dist": "cross-env NODE_ENV=production gulp serve",
-        "start": "gulp serve",
-        "build": "cross-env NODE_ENV=production gulp",
-        "test": "npm run serve:test",
-        "tasks": "gulp --tasks"
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "Firefox ESR"
-    ],
-    "eslintConfig": {
-        "parserOptions": {
-            "ecmaVersion": 6,
-            "sourceType": "module"
-        },
-        "env": {
-            "es6": true,
-            "node": true,
-            "browser": true,
-            "jquery": true
-        },
-        "rules": {
-            "quotes": [
-                2,
-                "single"
-            ]
-        }
+        "idb": "^4.0.3"
     }
 }
