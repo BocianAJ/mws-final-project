@@ -18,21 +18,11 @@ class DBHelper {
      */
     static fetchRestaurants(callback) {
         fetch(DBHelper.DATABASE_URL)
-            .then(response => response.json())
+            .then(function (response) {
+                response = response.json();
+                return response;
+            })
             .then(restaurants => callback(null, restaurants));
-
-        /* xhr.onload = () => {
-            if (xhr.status === 200) { // Got a success response from server!
-                const restaurants = JSON.parse(xhr.responseText);
-                callback(null, restaurants);
-            } else { // Oops!. Got an error from server.
-                const error = (`Request failed. Returned status of ${xhr.status}`);
-                callback(error, null);
-            }
-                            
-        };
-        xhr.send();
-        */
     }
 
     /**
@@ -96,6 +86,7 @@ class DBHelper {
                 callback(error, null);
             } else {
                 let results = restaurants
+
                 if (cuisine != 'all') { // filter by cuisine
                     results = results.filter(r => r.cuisine_type == cuisine);
                 }
@@ -179,4 +170,3 @@ class DBHelper {
     }
 
 }
-
