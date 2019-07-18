@@ -66,7 +66,7 @@ section {
 
 #footer {
     background-color: #444;
-    color: #aaa;
+    color: #FFF;
     font-size: 8pt;
     letter-spacing: 1px;
     padding: 25px;
@@ -184,7 +184,7 @@ a.skip-link:hover, a.skip-link:focus {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     /* height: 50px; - removing to make it responsive */
-    background-color: #3397DB;
+    background-color: #1C6AA1;
     display: -webkit-box; /* for centering its elements */
     display: -ms-flexbox;
     display: flex;
@@ -259,7 +259,7 @@ a.skip-link:hover, a.skip-link:focus {
 }
 
 #restaurants-list li h3 {
-    color: #f18200;
+    color: #b74400;
     font-family: Arial, sans-serif;
     font-size: 14pt;
     font-weight: 200;
@@ -275,7 +275,7 @@ a.skip-link:hover, a.skip-link:focus {
 }
 
 #restaurants-list li a {
-    background-color: orange;
+    background-color: #b74400;
     border-bottom: 3px solid #eee;
     color: #fff;
     display: inline-block;
@@ -287,7 +287,7 @@ a.skip-link:hover, a.skip-link:focus {
     text-transform: uppercase;
 }
 #restaurants-list li a:hover, #restaurants-list li a:focus {
-    background-color: #d98c00; 
+    background-color: #BD4600; 
 }
 /* ====================== Restaurant Details ====================== */
 
