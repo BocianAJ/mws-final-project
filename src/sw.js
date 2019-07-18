@@ -12,6 +12,11 @@ const dbPromise = openDB('keyval-store', 1, {
   upgrade(db) {
     db.createObjectStore('keyval');
   }
+
+const dbPromise = openDB('restaurants-reviews', 1, {
+    upgrade(db, oldVersion, newVersion, transaction) {
+        const restaurantStore = db.createObjectStore('restaurants');
+    }
 });
  
 
