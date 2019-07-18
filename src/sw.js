@@ -71,6 +71,40 @@ self.addEventListener('activate', function (event) {
 
 
 /* Fetching cached files */
+const idbKeyVal = {
+    async get(key) {
+        return (await dbPromise).get('restaurants', key);
+    },
+    async set(key, val) {
+    return (await dbPromise).put('restaurants', val, key);
+  }
+};
+
+function manageDatabase(databaseUrl) {
+    return idbKeyVal.get('restaurants')
+        .then(function (restaurants) {
+            return (
+                restaurants ||
+                fetch(databaseUrl)
+                .then(function (response) {
+                    return response.json()
+                })
+                .then(function (json) {
+                    idbKeyVal.set('restaurants', json);
+                    return json;
+                })
+            );
+        })
+        .then(function (response) {
+            return new Response(JSON.stringify(response))
+        })
+        .catch(function (error) {
+            return new Response(error, {
+                status: 404,
+                statusText: 'my bad request'
+            });
+        });
+}
 
 self.addEventListener('fetch', function (event) {
 
@@ -94,4 +128,8 @@ self.addEventListener('fetch', function (event) {
         }
     }
 
+    if (requestUrl.port === '1337') {
+        const databaseUrl = event.request;
+        event.respondWith(manageDatabase(databaseUrl));
+    }
 });
