@@ -42,6 +42,11 @@ const urlsCached = [
   'images/8.jpg',
   'images/9.jpg',
   'images/10.jpg'
+  'images/10.jpg',
+  'images/icons/icon-192x192.png',
+  'images/icons/icon-512x512.png',
+  'images/icons/favicon.ico',
+  'manifest.json'
 ];
 
 
