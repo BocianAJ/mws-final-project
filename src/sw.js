@@ -1,6 +1,5 @@
 'use strict';
 
-import { openDB, deleteDB, wrap, unwrap } from 'idb';
 import {
     openDB,
     deleteDB,
@@ -8,17 +7,13 @@ import {
     unwrap
 } from 'idb';
 
-const dbPromise = openDB('keyval-store', 1, {
-  upgrade(db) {
-    db.createObjectStore('keyval');
-  }
 
 const dbPromise = openDB('restaurants-reviews', 1, {
     upgrade(db, oldVersion, newVersion, transaction) {
         const restaurantStore = db.createObjectStore('restaurants');
     }
 });
- 
+
 
 const staticCacheName = 'restaurant-reviews-v1';
 var allCaches = [staticCacheName];
@@ -31,7 +26,6 @@ const urlsCached = [
   'scripts/dbhelper.js',
   'scripts/main.js',
   'scripts/restaurant_info.js',
-  /*'scripts/bundle.js',*/
   'images/1.jpg',
   'images/2.jpg',
   'images/3.jpg',
@@ -41,7 +35,6 @@ const urlsCached = [
   'images/7.jpg',
   'images/8.jpg',
   'images/9.jpg',
-  'images/10.jpg'
   'images/10.jpg',
   'images/icons/icon-192x192.png',
   'images/icons/icon-512x512.png',
