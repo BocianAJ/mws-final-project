@@ -1,6 +1,12 @@
 'use strict';
 
 import { openDB, deleteDB, wrap, unwrap } from 'idb';
+import {
+    openDB,
+    deleteDB,
+    wrap,
+    unwrap
+} from 'idb';
 
 const dbPromise = openDB('keyval-store', 1, {
   upgrade(db) {
