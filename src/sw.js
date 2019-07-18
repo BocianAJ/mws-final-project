@@ -115,13 +115,12 @@ self.addEventListener('fetch', function (event) {
             event.respondWith(caches.match('restaurant.html'));
         }
         /* Fetching cached images */
-        if (requestUrl.pathname.startsWith('/img/')) {
-                /* Replacing url of compressed images with url of cached full resolution images */
-                var imgUrl = requestUrl.pathname.replace(/[0-9]00w-/, '');
-                
-                event.respondWith(caches.match(imgUrl));
-        }
-        else {
+        if (requestUrl.pathname.startsWith('/images/')) {
+            /* Replacing url of compressed images with url of cached full resolution images */
+            var imgUrl = requestUrl.pathname.replace(/[0-9]00w-/, '');
+
+            event.respondWith(caches.match(imgUrl));
+        } else {
             event.respondWith(caches.match(event.request).then(function (response) {
                 return response || fetch(event.request);
             }));
